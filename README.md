@@ -30,7 +30,9 @@
 | 🛡️ **Tool Restrictions** | Restrict potentially dangerous tools like file system or network access |
 
 
-# Quick start
+# Quick start 
+
+## Linux & Other Unix variants
 
 With pip:
 
@@ -69,7 +71,21 @@ ANTHROPIC_API_KEY=
 
 > **Important**: Only models with tool calling capabilities can be used with mcp_use. Make sure your chosen model supports function calling or tool use.
 
-### Spin up your agent:
+## Apple Silicon using `uv`
+
+### Setup Environment
+
+```sh
+uv venv --python=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3
+source .venv/bin/activate
+```
+### Installing LangChain Providers & Other Packages
+After activating the virtual environment, install your required packages:
+```sh
+uv pip install python-dotenv langchain-openai mcp-use
+```
+
+## Spin up your agent:
 
 ```python
 import asyncio
